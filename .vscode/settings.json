@@ -1,0 +1,13 @@
+{
+  "cSpell.words": [
+    "frontmatter",
+    "postbuild",
+    "prebuild",
+    "predevelop",
+    "tailwindcss"
+  ],
+  "tailwindCSS.emmetCompletions": true,
+  "css.validate": false,
+  "editor.formatOnType": true,
+  "eslint.alwaysShowStatus": true,
+}
