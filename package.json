@@ -1,0 +1,39 @@
+{
+  "name": "snowpack-zh-hans",
+  "version": "1.0.0",
+  "repository": "https://github.com/qhj/snowpack-zh-hans.git",
+  "author": "qhj <me@qhj.moe>",
+  "license": "MIT",
+  "scripts": {
+    "start": "yarn develop",
+    "prebuild": "yarn build:config",
+    "build": "gatsby build",
+    "postbuild": "yarn clean",
+    "build:config": "tsc",
+    "predevelop": "yarn build:config",
+    "develop": "gatsby develop",
+    "clean": "del-cli ./.cache ./public ./*.js"
+  },
+  "dependencies": {
+    "gatsby": "^2.32.3",
+    "gatsby-plugin-postcss": "^3.7.0",
+    "gatsby-plugin-typescript": "^2.12.0",
+    "gatsby-source-filesystem": "^2.11.0",
+    "gatsby-transformer-remark": "^2.16.0",
+    "postcss": "^8.2.6",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.15.0",
+    "@typescript-eslint/parser": "^4.15.0",
+    "del-cli": "^3.0.1",
+    "eslint": "^7.19.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "prettier": "^2.2.1",
+    "tailwindcss": "^2.0.3",
+    "typescript": "^4.1.5"
+  }
+}
