@@ -1,0 +1,21 @@
+{
+  "include": [
+    "src/config/*",
+  ],
+  "exclude": [
+    "node_modules",
+    ".cache",
+    "public"
+  ],
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "CommonJS",
+    "jsx": "react-jsx",
+    "outDir": ".",
+    "moduleResolution": "Node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  }
+}
