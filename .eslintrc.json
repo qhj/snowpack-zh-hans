@@ -33,12 +33,16 @@
     ],
     "quotes": [
       "error",
-      "single"
+      "single",
+      {
+        "allowTemplateLiterals": true
+      }
     ],
     "semi": [
       "error",
       "never"
     ],
-    "react/react-in-jsx-scope": 0
+    "react/react-in-jsx-scope": 0,
+    "react/display-name": "off"
   }
 }
