@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.grid-main {
+  grid-template-areas: "menu content";
+}
+
+.grid-area-menu {
+  grid-area: menu;
+}
+
+.grid-area-content {
+  grid-area: content;
+}
