@@ -43,7 +43,7 @@ const FeatureList: React.FC<{ className?: string }> = ({
           >
             称为 ESM
           </a>
-          ）去避免不必要的工作并保持快速，无论你的项目有多大
+          ）去避免不必要的工作并保持快速，而无论你的项目有多大。
         </p>
         <p className="mt-6">一旦你试用过后，就再也回不去了。</p>
       </div>
