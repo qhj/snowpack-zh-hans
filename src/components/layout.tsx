@@ -38,15 +38,22 @@ import Menu from '../components/menu'
 // }
 
 interface Slot {
-  heroOrCover: ReactElement
+  title?: ReactElement
+  heroOrCover?: ReactElement
   content: ReactElement
+  tableOfContents?: ReactElement
 }
 
 export interface DisplayMenu {
   (): void
 }
 
-const Layout: React.FC<Slot> = ({ heroOrCover, content }: Slot) => {
+const Layout: React.FC<Slot> = ({
+  title,
+  heroOrCover,
+  content,
+  tableOfContents,
+}: Slot) => {
   const [isOpen, setIsOpen] = useState(false)
   const displayMenu: DisplayMenu = () => setIsOpen(!isOpen)
   const [stuck, setStuck] = useState(true)
@@ -92,7 +99,17 @@ const Layout: React.FC<Slot> = ({ heroOrCover, content }: Slot) => {
         >
           <Menu className="grid-area-menu"></Menu>
         </aside>
-        <article>{content}</article>
+        <div>
+          {title}
+          <div className="xl:grid xl:gap-6 grid-content xl:grid-cols-content">
+            <div className="xl:relative top-0">
+              <aside className="sticky top-14 grid-area-toc">
+                {tableOfContents}
+              </aside>
+            </div>
+            <article className="py-6 grid-area-article">{content}</article>
+          </div>
+        </div>
       </section>
     </>
   )

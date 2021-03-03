@@ -58,7 +58,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
       path: node.fields.slug,
-      component: path.resolve('./src/templates/main.tsx'),
+      component: path.resolve('./src/templates/content.tsx'),
       context: {
         slug: node.fields.slug,
       },

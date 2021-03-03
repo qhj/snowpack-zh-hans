@@ -41,6 +41,7 @@ export = {
         feature: 'repeat(auto-fit,minmax(250px,1fr))',
         main: '16rem auto',
         'main-auto': 'auto',
+        content: 'auto 20rem',
       },
     },
   },
