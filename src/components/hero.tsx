@@ -6,7 +6,7 @@ const Hero: React.FC = () => {
   const [isCopied, setIsCopied] = useState(false)
   const copyToClipboard = async () => {
     try {
-      await navigator.clipboard.writeText('snowpack!')
+      await navigator.clipboard.writeText('npm install snowpack')
       setText('已拷贝至剪贴板！')
       setIsCopied(true)
     } catch (error) {
