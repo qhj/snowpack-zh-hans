@@ -39,7 +39,7 @@ export = {
       },
       gridTemplateColumns: {
         feature: 'repeat(auto-fit,minmax(250px,1fr))',
-        main: '16rem minmax(auto,800px)',
+        main: '16rem auto',
         'main-auto': 'auto',
       },
     },
