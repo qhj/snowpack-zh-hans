@@ -75,6 +75,7 @@ const Layout: React.FC<Slot> = ({ heroOrCover, content }: Slot) => {
     <>
       <Helmet>
         <body className={isOpen ? 'overflow-hidden' : 'overflow-visible'} />
+        {/* https://stackoverflow.com/a/46405558 */}
       </Helmet>
       <Banner />
       <NavBar displayMenu={displayMenu} ref={sticky} />
