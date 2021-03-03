@@ -16,6 +16,7 @@ const gatsbyConfig: GatsbyConfig = {
       resolve: 'gatsby-transformer-remark',
     },
     'gatsby-plugin-postcss',
+    'gatsby-plugin-react-helmet',
   ],
 }
 
