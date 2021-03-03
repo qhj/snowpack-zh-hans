@@ -1,9 +1,11 @@
 {
   "cSpell.words": [
+    "Preact",
     "frontmatter",
     "postbuild",
     "prebuild",
     "predevelop",
+    "semibold",
     "tailwindcss"
   ],
   "tailwindCSS.emmetCompletions": true,
