@@ -5629,6 +5629,13 @@ gatsby-recipes@^0.9.1:
     xstate "^4.9.1"
     yoga-layout-prebuilt "^1.9.6"
 
+gatsby-remark-classes@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-classes/-/gatsby-remark-classes-1.0.0.tgz#6d93f7054a558c2cd7ba73ff5e25a5adc01fd5a9"
+  integrity sha512-F0pM8FdTwqFDDiP2qR4TnZZmkRI6Q3Mry/qzbxI4ORE/7ZnR6EKfvA1DryZ2RnrZyVUnbBEdzmZDPAYcBPE4PA==
+  dependencies:
+    unist-util-select "^2.0.2"
+
 gatsby-source-filesystem@^2.11.0:
   version "2.11.0"
   resolved "https://registry.npm.taobao.org/gatsby-source-filesystem/download/gatsby-source-filesystem-2.11.0.tgz#3fff5398796b17eb960e83d0eaa99e578b6e4ef1"
@@ -8552,6 +8559,11 @@ normalize-url@^4.1.0:
   version "4.5.0"
   resolved "https://registry.npm.taobao.org/normalize-url/download/normalize-url-4.5.0.tgz?cache=0&sync_timestamp=1602432435724&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fnormalize-url%2Fdownload%2Fnormalize-url-4.5.0.tgz#453354087e6ca96957bd8f5baf753f5982142129"
   integrity sha1-RTNUCH5sqWlXvY9br3U/WYIUISk=
+
+not@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/not/-/not-0.1.0.tgz#c9691c1746c55dcfbe54cbd8bd4ff041bc2b519d"
+  integrity sha1-yWkcF0bFXc++VMvYvU/wQbwrUZ0=
 
 npm-run-path@^2.0.0:
   version "2.0.2"
@@ -12219,6 +12231,17 @@ unist-util-select@^1.5.0:
     debug "^2.2.0"
     nth-check "^1.0.1"
 
+unist-util-select@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/unist-util-select/-/unist-util-select-2.0.2.tgz#cb2774b599695172e7b60a8b5f50793e418f7ea6"
+  integrity sha512-Yv5Z5ShMxv7Z9Dw175tKvOiRVXV4FrMHG778DSD9Z0jALgb3wAx9DoeInr3200QlYp71rYUXzzJdCb76xKdrCw==
+  dependencies:
+    css-selector-parser "^1.1.0"
+    not "^0.1.0"
+    nth-check "^1.0.1"
+    unist-util-is "^3.0.0"
+    zwitch "^1.0.3"
+
 unist-util-stringify-position@^1.0.0, unist-util-stringify-position@^1.1.1:
   version "1.1.2"
   resolved "https://registry.npm.taobao.org/unist-util-stringify-position/download/unist-util-stringify-position-1.1.2.tgz#3f37fcf351279dcbca7480ab5889bb8a832ee1c6"
@@ -12976,7 +12999,7 @@ yurnalist@^2.1.0:
     read "^1.0.7"
     strip-ansi "^5.2.0"
 
-zwitch@^1.0.0:
+zwitch@^1.0.0, zwitch@^1.0.3:
   version "1.0.5"
   resolved "https://registry.npm.taobao.org/zwitch/download/zwitch-1.0.5.tgz#d11d7381ffed16b742f6af7b3f223d5cd9fe9920"
   integrity sha1-0R1zgf/tFrdC9q97PyI9XNn+mSA=
