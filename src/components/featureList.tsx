@@ -6,7 +6,7 @@ interface Feature {
 }
 
 const FeatureListButton: React.FC = () => (
-  <div className="text-center mt-8 text-2xl">
+  <div className="text-center mt-8 text-2xl font-bold">
     <a
       className="inline-block w-44 shadow-sm hover:shadow-md my-1 mx-3 px-8 py-2 bg-big-button rounded-md border text-white"
       href="/tutorials/quick-start"
