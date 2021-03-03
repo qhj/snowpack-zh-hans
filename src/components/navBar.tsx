@@ -25,10 +25,7 @@ const Link: React.FC<LinkProps> = ({
 const NavigationBar: React.FC = () => {
   return (
     <nav className="flex bg-nav h-14 items-center text-white sticky top-0">
-      <Link
-        className="flex text-2xl font-bold items-center p-5"
-        to="https://github.com/snowpackjs/snowpack/releases"
-      >
+      <Link className="flex text-2xl font-bold items-center p-5" to="/">
         <svg
           className="mr-2 w-logo h-logo fill-current"
           xmlns="http://www.w3.org/2000/svg"
