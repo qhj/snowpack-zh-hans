@@ -1,3 +1,6 @@
+import { forwardRef } from 'react'
+import { DisplayMenu } from './layout'
+
 interface LinkProps {
   className?: string
   to: string
@@ -22,46 +25,69 @@ const Link: React.FC<LinkProps> = ({
   )
 }
 
-const NavigationBar: React.FC = () => {
-  return (
-    <nav className="flex bg-nav h-14 items-center text-white sticky top-0">
-      <Link className="flex text-2xl font-bold items-center p-5" to="/">
-        <svg
-          className="mr-2 w-logo h-logo fill-current"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 640 512"
-        >
-          <g transform="translate(-1.000000, 0.000000)" fillRule="nonzero">
-            <path d="M635.92,462.7 L347.92,14.7 C342.03,5.54 331.89,0 321,0 C310.11,0 299.97,5.54 294.08,14.7 L6.08,462.7 C-0.250773249,472.547007 -0.699487627,485.064987 4.91,495.34 C10.522069,505.612419 21.2945349,512 33,512 L609,512 C620.71,512 631.48,505.61 637.09,495.33 C642.699457,485.058495 642.250708,472.543372 635.92,462.7 Z M321,91.18 L406.39,224 L321,224 L257,288 L218.94,249.94 L321,91.18 Z"></path>
-          </g>
-        </svg>
-        <span>Snowpack</span>
-      </Link>
-      <div className="flex-grow"></div>
-      <Link
-        to="https://github.com/snowpackjs/snowpack/releases"
-        target="_blank"
-      >
-        <span className="pr-4 border-r border-gray-500 text-gray-300 hover:text-white">
-          v3.0.13
-        </span>
-      </Link>
-      {data.map(element => {
-        const SVG = element.svg
-        return (
-          <Link
-            className="last:pr-4 text-gray-300 hover:text-white"
-            key={element.url}
-            to={element.url}
-            target="_blank"
-          >
-            <SVG className="w-4 h-4" />
-          </Link>
-        )
-      })}
-    </nav>
-  )
+interface NavBarProps {
+  displayMenu: DisplayMenu
 }
+
+const NavigationBar = forwardRef<HTMLElement, NavBarProps>(
+  ({ displayMenu }: NavBarProps, ref) => {
+    return (
+      <nav
+        className="px-2 flex bg-nav h-14 items-center text-white sticky top-0"
+        ref={ref}
+      >
+        <button
+          className="flex justify-center items-center md:hidden w-8 h-8"
+          type="button"
+          onClick={displayMenu}
+        >
+          <svg
+            className="w-4 h-4 fill-current"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"
+          >
+            <path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path>
+          </svg>
+        </button>
+        <div className="flex-grow md:hidden"></div>
+        <Link className="flex text-2xl font-bold items-center p-5" to="/">
+          <svg
+            className="mr-2 w-logo h-logo fill-current"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 640 512"
+          >
+            <g transform="translate(-1.000000, 0.000000)" fillRule="nonzero">
+              <path d="M635.92,462.7 L347.92,14.7 C342.03,5.54 331.89,0 321,0 C310.11,0 299.97,5.54 294.08,14.7 L6.08,462.7 C-0.250773249,472.547007 -0.699487627,485.064987 4.91,495.34 C10.522069,505.612419 21.2945349,512 33,512 L609,512 C620.71,512 631.48,505.61 637.09,495.33 C642.699457,485.058495 642.250708,472.543372 635.92,462.7 Z M321,91.18 L406.39,224 L321,224 L257,288 L218.94,249.94 L321,91.18 Z"></path>
+            </g>
+          </svg>
+          <span>Snowpack</span>
+        </Link>
+        <div className="flex-grow"></div>
+        <Link
+          to="https://github.com/snowpackjs/snowpack/releases"
+          target="_blank"
+        >
+          <span className="md:pr-4 md:border-r md:border-gray-500 text-gray-300 hover:text-white">
+            v3.0.13
+          </span>
+        </Link>
+        {data.map(element => {
+          const SVG = element.svg
+          return (
+            <Link
+              className="text-gray-300 hover:text-white hidden md:block"
+              key={element.url}
+              to={element.url}
+              target="_blank"
+            >
+              <SVG className="w-4 h-4" />
+            </Link>
+          )
+        })}
+      </nav>
+    )
+  }
+)
 
 export default NavigationBar
 

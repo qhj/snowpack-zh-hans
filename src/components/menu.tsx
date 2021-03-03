@@ -24,7 +24,7 @@ const Menu: React.FC<{ className?: string }> = ({
             return (
               <li className="mt-6 first:mt-0" key={element.url}>
                 <Link
-                  className="hover:underline text-xl font-semibold"
+                  className="hover:underline text-xl font-semibold text-gray-400 md:text-black"
                   to={element.url}
                 >
                   {element.header}
@@ -35,13 +35,15 @@ const Menu: React.FC<{ className?: string }> = ({
             const subLists = element.links
             return (
               <li className="mt-6 first:mt-0" key={element.url}>
-                <span className="text-xl font-semibold">{element.header}</span>
+                <span className="text-xl font-semibold text-gray-400 md:text-black">
+                  {element.header}
+                </span>
                 <ol>
                   {subLists.map(element => {
                     return (
                       <li key={element.url}>
                         <Link
-                          className="hover:underline text-gray-500"
+                          className="hover:underline text-white md:text-gray-500"
                           to={element.url}
                         >
                           {element.title}
