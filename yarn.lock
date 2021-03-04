@@ -5648,9 +5648,9 @@ gatsby-remark-classes@^1.0.0:
     unist-util-select "^2.0.2"
 
 gatsby-remark-translation@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-translation/-/gatsby-remark-translation-1.0.2.tgz#55c321939526d379eaa0a44977790795340861c2"
-  integrity sha512-0CRFPPLuBkstbH7FjE27f5+hxWFDp42MVFhJe2hNf6qYiYxXjJaEsVpixh7rnuuahSE1Llo2wjzjfCISxh7+JQ==
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-translation/-/gatsby-remark-translation-1.0.4.tgz#64a3d69624c7ccaaad25381b14c69c5ecd231a09"
+  integrity sha512-F3VNPsOko8V5om9I9zKFVjfScpFavK7XzN4GXNNAF7yA5hBWe4zhB9ZaSu2NkM3t+sA7Tjqc08tmy/sFI9vSyA==
   dependencies:
     mdast-util-to-string "^2.0.0"
     remark-grid-tables "^2.1.1"

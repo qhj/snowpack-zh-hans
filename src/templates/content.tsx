@@ -2,6 +2,11 @@ import { graphql, PageProps } from 'gatsby'
 
 import Layout from '../components/layout'
 
+interface Heading {
+  depth: number
+  value: string
+}
+
 interface PageQueryResult {
   site: {
     siteMetadata: {
@@ -9,7 +14,7 @@ interface PageQueryResult {
     }
   }
   markdownRemark: {
-    tableOfContents: string
+    headings: Heading[]
     html: string
     frontmatter: {
       title: string
@@ -31,7 +36,16 @@ const Main: React.FC<PageProps<PageQueryResult>> = ({
       }
       content={<div dangerouslySetInnerHTML={{ __html: content.html }} />}
       tableOfContents={
-        <div dangerouslySetInnerHTML={{ __html: content.tableOfContents }} />
+        // <div dangerouslySetInnerHTML={{ __html: content.tableOfContents }} />
+        <ul id="toc">
+          {content.headings.map(heading => {
+            return (
+              <li key={heading.value}>
+                <a href={`#${heading.value}`}>{heading.value}</a>
+              </li>
+            )
+          })}
+        </ul>
       }
     ></Layout>
   )
@@ -47,7 +61,10 @@ export const pageQuery = graphql`
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
-      tableOfContents
+      headings {
+        depth
+        value
+      }
       html
       frontmatter {
         title

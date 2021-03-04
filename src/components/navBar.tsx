@@ -33,6 +33,7 @@ const NavigationBar = forwardRef<HTMLElement, NavBarProps>(
   ({ displayMenu }: NavBarProps, ref) => {
     return (
       <nav
+        id="nav"
         className="px-2 flex bg-nav h-14 items-center text-white sticky top-0 z-50"
         ref={ref}
       >
