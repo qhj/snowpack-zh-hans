@@ -34,8 +34,11 @@ const gatsbyConfig: GatsbyConfig = {
             options: {
               icon: '#',
               isIconAfterHeader: true,
-              className: 'text-nav',
-            }
+              className: 'text-nav italic',
+            },
+          },
+          {
+            resolve: 'gatsby-remark-translation',
           },
         ],
       },

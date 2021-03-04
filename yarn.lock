@@ -5647,6 +5647,15 @@ gatsby-remark-classes@^1.0.0:
   dependencies:
     unist-util-select "^2.0.2"
 
+gatsby-remark-translation@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-translation/-/gatsby-remark-translation-1.0.0.tgz#fec67aa8a24e8de19321e39f13ea3994201c6629"
+  integrity sha512-0hHAcK2gmNhEelBJtCx0+wInANQceTh0UikFMWq3qihMVRY93mg09zG11shEC3MzK5WpszTKCna6LAwRS7XXQA==
+  dependencies:
+    mdast-util-to-string "^2.0.0"
+    remark-grid-tables "^2.1.1"
+    unist-util-visit "^2.0.3"
+
 gatsby-source-filesystem@^2.11.0:
   version "2.11.0"
   resolved "https://registry.npm.taobao.org/gatsby-source-filesystem/download/gatsby-source-filesystem-2.11.0.tgz#3fff5398796b17eb960e83d0eaa99e578b6e4ef1"
@@ -6109,6 +6118,11 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6
   version "4.2.6"
   resolved "https://registry.npm.taobao.org/graceful-fs/download/graceful-fs-4.2.6.tgz#ff040b2b0853b23c3d31027523706f1885d76bee"
   integrity sha1-/wQLKwhTsjw9MQJ1I3BvGIXXa+4=
+
+grapheme-splitter@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/grapheme-splitter/-/grapheme-splitter-1.0.4.tgz#9cf3a665c6247479896834af35cf1dbb4400767e"
+  integrity sha512-bzh50DW9kTPM00T8y4o8vQg89Di9oLJVLW/KaOGIXJWP/iqCN6WKYkbNOF04vFLJhwcpYUh9ydh/+5vpOqV4YQ==
 
 graphql-compose@^6.3.8:
   version "6.3.8"
@@ -7770,6 +7784,11 @@ lodash.toarray@^4.4.0:
   version "4.4.0"
   resolved "https://registry.npm.taobao.org/lodash.toarray/download/lodash.toarray-4.4.0.tgz#24c4bfcd6b2fba38bfd0594db1179d8e9b656561"
   integrity sha1-JMS/zWsvuji/0FlNsRedjptlZWE=
+
+lodash.trimend@^4.5.1:
+  version "4.5.1"
+  resolved "https://registry.yarnpkg.com/lodash.trimend/-/lodash.trimend-4.5.1.tgz#12804437286b98cad8996b79414e11300114082f"
+  integrity sha1-EoBENyhrmMrYmWt5QU4RMAEUCC8=
 
 lodash.uniq@^4.5.0:
   version "4.5.0"
@@ -10353,6 +10372,16 @@ regjsparser@^0.6.4:
   dependencies:
     jsesc "~0.5.0"
 
+remark-grid-tables@^2.1.1:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/remark-grid-tables/-/remark-grid-tables-2.1.2.tgz#cfa32b15334b50c1b57568e435e9433272de566c"
+  integrity sha512-KBbhPlVh3ct01cJDgjcWLChBNUzlsYpNCif/rqYVVagP4L3gIJF7Vw7jTmoRzXtAOU7tS0Gw92p3zXEMomxnxw==
+  dependencies:
+    grapheme-splitter "^1.0.4"
+    lodash.trimend "^4.5.1"
+    string-width "^4.2.0"
+    unist-util-visit "^2.0.3"
+
 remark-mdx@^2.0.0-next.4:
   version "2.0.0-next.8"
   resolved "https://registry.npm.taobao.org/remark-mdx/download/remark-mdx-2.0.0-next.8.tgz#db1c3cbc606ea0d01526242199bb134d99020363"
@@ -12292,7 +12321,7 @@ unist-util-visit@^1.0.0, unist-util-visit@^1.1.0, unist-util-visit@^1.4.1:
   dependencies:
     unist-util-visit-parents "^2.0.0"
 
-unist-util-visit@^2.0.0, unist-util-visit@^2.0.2:
+unist-util-visit@^2.0.0, unist-util-visit@^2.0.2, unist-util-visit@^2.0.3:
   version "2.0.3"
   resolved "https://registry.npm.taobao.org/unist-util-visit/download/unist-util-visit-2.0.3.tgz#c3703893146df47203bb8a9795af47d7b971208c"
   integrity sha1-w3A4kxRt9HIDu4qXla9H17lxIIw=
