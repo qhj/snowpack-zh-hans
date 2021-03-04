@@ -88,17 +88,19 @@ const Layout: React.FC<Slot> = ({
       <NavBar displayMenu={displayMenu} ref={sticky} />
       {heroOrCover}
       <section className="grid mt-6 mb-12 mx-auto gap-6 grid-main md:grid-cols-main grid-cols-main-auto max-w-main px-6">
-        <aside
-          className={`p-6 pb-4 w-full md:block md:w-64 bg-nav box-border md:box-content md:bg-white fixed md:static inset-x-0 bottom-0 ${
-            isOpen ? 'block overflow-auto' : 'hidden'
-          }`}
-          style={{
-            top: (() => sticky.current?.getBoundingClientRect().bottom)(),
-            // https://stackoverflow.com/a/11396681
-          }}
-        >
-          <Menu className="grid-area-menu"></Menu>
-        </aside>
+        <div className="md:relative top-0">
+          <aside
+            className={`md:sticky p-6 pb-4 w-full md:block md:w-64 bg-nav z-40 box-border md:bg-white fixed md:static inset-x-0 bottom-0 ${
+              isOpen ? 'block overflow-auto' : 'hidden'
+            }`}
+            style={{
+              top: (() => sticky.current?.getBoundingClientRect().bottom)(),
+              // https://stackoverflow.com/a/11396681
+            }}
+          >
+            <Menu className="grid-area-menu"></Menu>
+          </aside>
+        </div>
         <div>
           {title}
           <div className="xl:grid xl:gap-6 grid-content xl:grid-cols-content">
