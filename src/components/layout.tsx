@@ -58,6 +58,8 @@ const Layout: React.FC<Slot> = ({
   const displayMenu: DisplayMenu = () => setIsOpen(!isOpen)
   const [stuck, setStuck] = useState(true)
   const sticky = useRef<HTMLElement>(null)
+  const mediaMatch = window.matchMedia('(min-width: 768px)')
+  const [matches, setMatches] = useState(mediaMatch.matches)
   useEffect(() => {
     const observer = new IntersectionObserver(
       () => {
@@ -77,6 +79,11 @@ const Layout: React.FC<Slot> = ({
     }
     // https://medium.com/@She_Daddy/using-the-intersection-observer-api-dbe13144b5da
   }, [])
+  useEffect(() => {
+    const handler = e => setMatches(e.matches)
+    mediaMatch.addEventListener('change', handler)
+    return () => mediaMatch.removeEventListener('change', handler)
+  })
 
   return (
     <>
@@ -87,20 +94,20 @@ const Layout: React.FC<Slot> = ({
       <Banner />
       <NavBar displayMenu={displayMenu} ref={sticky} />
       {heroOrCover}
-      <section className="grid mt-6 mb-12 mx-auto gap-6 grid-main md:grid-cols-main grid-cols-main-auto max-w-main px-6">
-        <div className="md:relative top-0">
-          <aside
-            className={`md:sticky p-6 pb-4 w-full md:block md:w-64 bg-nav z-40 box-border md:bg-white fixed md:static inset-x-0 bottom-0 ${
-              isOpen ? 'block overflow-auto' : 'hidden'
-            }`}
-            style={{
-              top: (() => sticky.current?.getBoundingClientRect().bottom)(),
-              // https://stackoverflow.com/a/11396681
-            }}
-          >
-            <Menu className="grid-area-menu"></Menu>
-          </aside>
-        </div>
+      <section className="grid mt-6 mx-auto gap-6 grid-main md:grid-cols-main grid-cols-main-auto max-w-main px-6">
+        <aside
+          className={`md:sticky grid-area-menu p-6 pb-4 overflow-y-auto w-full md:block md:w-64 md:max-h-menu bg-nav z-40 box-border md:bg-white fixed inset-x-0 bottom-0 ${
+            isOpen ? 'block' : 'hidden'
+          }`}
+          style={{
+            top: !matches
+              ? sticky.current?.getBoundingClientRect().bottom
+              : '3.5rem',
+            // https://stackoverflow.com/a/11396681
+          }}
+        >
+          <Menu />
+        </aside>
         <div>
           {title}
           <div className="xl:grid xl:gap-6 grid-content xl:grid-cols-content">
