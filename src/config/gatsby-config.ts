@@ -29,6 +29,14 @@ const gatsbyConfig: GatsbyConfig = {
               },
             },
           },
+          {
+            resolve: 'gatsby-remark-autolink-headers',
+            options: {
+              icon: '#',
+              isIconAfterHeader: true,
+              className: 'text-nav',
+            }
+          },
         ],
       },
     },

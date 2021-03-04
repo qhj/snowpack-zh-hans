@@ -103,7 +103,7 @@ const Layout: React.FC<Slot> = ({
           {title}
           <div className="xl:grid xl:gap-6 grid-content xl:grid-cols-content">
             <div className="xl:relative top-0">
-              <aside className="sticky top-14 grid-area-toc">
+              <aside className="sticky top-14 xl:pt-20 xl:pb-6 grid-area-toc">
                 {tableOfContents}
               </aside>
             </div>
