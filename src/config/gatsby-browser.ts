@@ -2,6 +2,7 @@ import { GatsbyBrowser } from 'gatsby'
 
 import './src/styles/global.css'
 
+// https://css-tricks.com/sticky-table-of-contents-with-scrolling-active-states/
 export const onInitialClientRender: GatsbyBrowser['onInitialClientRender'] = () => {
   const observer = new IntersectionObserver(
     entries => {
@@ -11,19 +12,19 @@ export const onInitialClientRender: GatsbyBrowser['onInitialClientRender'] = () 
           document
             .querySelectorAll(`ul#toc > li > a[href="#${id}"]`)
             .forEach(element => {
-              element.classList.add('text-blue-500')
+              element.classList.add('text-blue-500', 'underline')
             })
         } else {
           document
             .querySelectorAll(`ul#toc > li > a[href="#${id}"]`)
             .forEach(element => {
-              element.classList.remove('text-blue-500')
+              element.classList.remove('text-blue-500', 'underline')
             })
         }
       })
     },
     {
-      rootMargin: '-35% 0% -35%',
+      rootMargin: '-30% 0% -40%',
     }
   )
   document.querySelectorAll(`article [id]`).forEach(element => {

@@ -36,7 +36,6 @@ const Main: React.FC<PageProps<PageQueryResult>> = ({
       }
       content={<div dangerouslySetInnerHTML={{ __html: content.html }} />}
       tableOfContents={
-        // <div dangerouslySetInnerHTML={{ __html: content.tableOfContents }} />
         <ul id="toc">
           {content.headings.map(heading => {
             return (
