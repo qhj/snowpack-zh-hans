@@ -1,3 +1,4 @@
+import { Link } from 'gatsby'
 import { ReactElement } from 'react'
 
 interface Feature {
@@ -7,18 +8,18 @@ interface Feature {
 
 const FeatureListButton: React.FC = () => (
   <div className="text-center mt-8 text-2xl font-bold">
-    <a
+    <Link
       className="inline-block w-44 shadow-sm hover:shadow-md my-1 mx-3 px-8 py-2 bg-big-button rounded-md border text-white"
-      href="/tutorials/quick-start"
+      to="/tutorials/quick-start"
     >
       开 始
-    </a>
-    <a
+    </Link>
+    <Link
       className="inline-block w-44 shadow-sm hover:shadow-md my-1 mx-3 px-8 py-2 text-blue-500 rounded-md border border-black"
-      href="/how-snowpack-works"
+      to="/how-snowpack-works"
     >
       了解更多
-    </a>
+    </Link>
   </div>
 )
 
@@ -40,6 +41,8 @@ const FeatureList: React.FC<{ className?: string }> = ({
           <a
             className="text-blue-600"
             href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/import"
+            target="_blank"
+            rel="noreferrer"
           >
             称为 ESM
           </a>
@@ -91,9 +94,9 @@ const feature: Array<Feature> = [
     description: (
       <>
         无需刷新。通过&nbsp;
-        <a className="text-blue-600" href="/concepts/hot-module-replacement">
+        <Link className="text-blue-600" to="/concepts/hot-module-replacement">
           HMR 和快速刷新
-        </a>
+        </Link>
         可以立即在浏览器中看到对 React、 Preact 和 Svelte 的修改
       </>
     ),
@@ -103,9 +106,9 @@ const feature: Array<Feature> = [
     description: (
       <>
         享受 Snowpack 对 JSX，Typescript，React，Preact，CSS Modules&nbsp;
-        <a className="text-blue-600" href="/reference/supported-files">
+        <Link className="text-blue-600" to="/reference/supported-files">
           等等
-        </a>
+        </Link>
         的内置支持。
       </>
     ),
@@ -119,13 +122,13 @@ const feature: Array<Feature> = [
     description: (
       <>
         Babel？Sass？MDX？浏览整个&nbsp;
-        <a className="text-blue-600" href="/plugins">
+        <Link className="text-blue-600" to="/plugins">
           Snowpack 插件目录
-        </a>
+        </Link>
         以结合你喜欢的构建工具（或者
-        <a className="text-blue-600" href="/reference/plugins">
+        <Link className="text-blue-600" to="/reference/plugins">
           创建自己的插件！
-        </a>
+        </Link>
         ）
       </>
     ),

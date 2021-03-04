@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'gatsby'
 
 const Hero: React.FC = () => {
   const originalText = 'npm install snowpack'
@@ -27,12 +28,12 @@ const Hero: React.FC = () => {
           更 快 的 前 端 构 建 工 具
         </p>
         <div className="flex justify-center mt-6">
-          <a
+          <Link
             className="font-bold text-2xl text-white bg-big-button py-2 px-8 rounded-md border shadow-sm hover:shadow-md"
-            href="/tutorials/quick-start"
+            to="/tutorials/quick-start"
           >
             开 始
-          </a>
+          </Link>
           <div className="m-2"></div>
           <button
             className="group w-72 font-mono border rounded-md px-4 py-3 shadow-sm border-gray-400 hover:border-blue-500 hover:shadow-md focus:outline-none bg-white"

@@ -1,29 +1,7 @@
 import { forwardRef } from 'react'
+import { Link } from 'gatsby'
+
 import { DisplayMenu } from './layout'
-
-interface LinkProps {
-  className?: string
-  to: string
-  target?: string
-  children?
-}
-
-const Link: React.FC<LinkProps> = ({
-  className,
-  to,
-  target,
-  children,
-}: LinkProps) => {
-  return (
-    <a
-      className={'text-sm align-middle p-2 ' + className}
-      href={to}
-      target={target}
-    >
-      {children}
-    </a>
-  )
-}
 
 interface NavBarProps {
   displayMenu: DisplayMenu
@@ -51,7 +29,10 @@ const NavigationBar = forwardRef<HTMLElement, NavBarProps>(
           </svg>
         </button>
         <div className="flex-grow md:hidden"></div>
-        <Link className="flex text-2xl font-bold items-center p-5" to="/">
+        <Link
+          className="align-middle flex text-2xl font-bold items-center p-5"
+          to="/"
+        >
           <svg
             className="mr-2 w-logo h-logo fill-current"
             xmlns="http://www.w3.org/2000/svg"
@@ -64,25 +45,28 @@ const NavigationBar = forwardRef<HTMLElement, NavBarProps>(
           <span>Snowpack</span>
         </Link>
         <div className="flex-grow"></div>
-        <Link
-          to="https://github.com/snowpackjs/snowpack/releases"
+        <a
+          className="text-sm align-middle p-2"
+          href="https://github.com/snowpackjs/snowpack/releases"
           target="_blank"
+          rel="noreferrer"
         >
           <span className="md:pr-4 md:border-r md:border-gray-500 text-gray-300 hover:text-white">
             v3.0.13
           </span>
-        </Link>
+        </a>
         {data.map(element => {
           const SVG = element.svg
           return (
-            <Link
-              className="text-gray-300 hover:text-white hidden md:block"
+            <a
+              className="text-gray-300 hover:text-white hidden md:block text-sm align-middle p-2"
               key={element.url}
-              to={element.url}
+              href={element.url}
               target="_blank"
+              rel="noreferrer"
             >
               <SVG className="w-4 h-4" />
-            </Link>
+            </a>
           )
         })}
       </nav>
