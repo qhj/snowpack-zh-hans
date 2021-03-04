@@ -12,13 +12,13 @@ export const onInitialClientRender: GatsbyBrowser['onInitialClientRender'] = () 
           document
             .querySelectorAll(`ul#toc > li > a[href="#${id}"]`)
             .forEach(element => {
-              element.classList.add('text-blue-500', 'underline')
+              element.classList.add('xl:text-blue-500', 'xl:underline')
             })
         } else {
           document
             .querySelectorAll(`ul#toc > li > a[href="#${id}"]`)
             .forEach(element => {
-              element.classList.remove('text-blue-500', 'underline')
+              element.classList.remove('xl:text-blue-500', 'xl:underline')
             })
         }
       })
