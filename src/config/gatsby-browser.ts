@@ -10,15 +10,17 @@ export const onInitialClientRender: GatsbyBrowser['onInitialClientRender'] = () 
         const id = entry.target.getAttribute('id')
         if (entry.intersectionRatio > 0) {
           document
-            .querySelectorAll(`ul#toc > li > a[href="#${id}"]`)
+            .querySelectorAll(`ol#toc > li > a[href="#${id}"]`)
             .forEach(element => {
+              element.classList.remove('text-gray-500')
               element.classList.add('xl:text-blue-500', 'xl:underline')
             })
         } else {
           document
-            .querySelectorAll(`ul#toc > li > a[href="#${id}"]`)
+            .querySelectorAll(`ol#toc > li > a[href="#${id}"]`)
             .forEach(element => {
               element.classList.remove('xl:text-blue-500', 'xl:underline')
+              element.classList.add('text-gray-500')
             })
         }
       })
