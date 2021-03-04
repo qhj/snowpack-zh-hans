@@ -12,7 +12,7 @@
     "build:config": "tsc",
     "predevelop": "yarn clean && yarn build:config",
     "develop": "gatsby develop",
-    "clean": "del-cli ./.cache ./public ./*.js"
+    "clean": "del-cli ./.cache ./public"
   },
   "dependencies": {
     "gatsby": "^2.32.3",
