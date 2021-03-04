@@ -5647,10 +5647,10 @@ gatsby-remark-classes@^1.0.0:
   dependencies:
     unist-util-select "^2.0.2"
 
-gatsby-remark-translation@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-translation/-/gatsby-remark-translation-1.0.1.tgz#e11047dc1674a3dcfa701ce9a3d8b187339a0526"
-  integrity sha512-7B8sPlYeh+hyuWpW9Mzne2OiWKds/5yylv1VprhPQMGBgF+l5qLfg8UjJGTXJWML80PKLJiQHiL6ZbimJau6+Q==
+gatsby-remark-translation@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-translation/-/gatsby-remark-translation-1.0.2.tgz#55c321939526d379eaa0a44977790795340861c2"
+  integrity sha512-0CRFPPLuBkstbH7FjE27f5+hxWFDp42MVFhJe2hNf6qYiYxXjJaEsVpixh7rnuuahSE1Llo2wjzjfCISxh7+JQ==
   dependencies:
     mdast-util-to-string "^2.0.0"
     remark-grid-tables "^2.1.1"
