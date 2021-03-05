@@ -8,7 +8,7 @@ const Home: React.FC = () => {
   return (
     <Layout
       heroOrCover={<Hero />}
-      content={<FeatureList className="grid-area-content" />}
+      main={<FeatureList className="grid-area-content" />}
     />
   )
 }

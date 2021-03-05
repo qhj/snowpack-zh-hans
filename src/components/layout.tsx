@@ -42,20 +42,14 @@ import favicon from '../images/favicon.svg'
 interface Slot {
   title?: ReactElement
   heroOrCover?: ReactElement
-  content: ReactElement
-  tableOfContents?: ReactElement
+  main: ReactElement
 }
 
 export interface DisplayMenu {
   (): void
 }
 
-const Layout: React.FC<Slot> = ({
-  title,
-  heroOrCover,
-  content,
-  tableOfContents,
-}: Slot) => {
+const Layout: React.FC<Slot> = ({ title, heroOrCover, main }: Slot) => {
   const [isOpen, setIsOpen] = useState(false)
   const displayMenu: DisplayMenu = () => setIsOpen(!isOpen)
   const [stuck, setStuck] = useState(true)
@@ -85,6 +79,7 @@ const Layout: React.FC<Slot> = ({
     const handler = e => setMatches(e.matches)
     mediaMatch.addEventListener('change', handler)
     return () => mediaMatch.removeEventListener('change', handler)
+    // https://medium.com/@ttennant/react-inline-styles-and-media-queries-using-a-custom-react-hook-e76fa9ec89f6
   })
 
   return (
@@ -113,14 +108,15 @@ const Layout: React.FC<Slot> = ({
         </aside>
         <div>
           {title}
-          <div className="xl:grid xl:gap-6 grid-content xl:grid-cols-content">
-            <div className="xl:relative top-0">
-              <aside className="sticky top-14 xl:pt-20 xl:pb-6 grid-area-toc">
+          {main}
+          {/* <div className="xl:grid xl:gap-6 grid-content xl:grid-cols-content">
+            <div className="xl:relative top-0 max-w-min">
+              <aside className="sticky top-14 w-80 xl:pt-20 xl:pb-6 grid-area-toc">
                 {tableOfContents}
               </aside>
             </div>
             <article className="py-6 grid-area-article">{content}</article>
-          </div>
+          </div> */}
         </div>
       </section>
     </>
