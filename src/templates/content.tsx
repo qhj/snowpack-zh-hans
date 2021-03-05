@@ -29,11 +29,7 @@ const Content: React.FC<PageProps<PageQueryResult>> = ({
   const siteTitle = data.site.siteMetadata.title
   return (
     <Layout
-      title={
-        <h1 className="text-4xl font-bold my-10">
-          {content.frontmatter.title}
-        </h1>
-      }
+      title={content.frontmatter.title}
       main={
         <div className="xl:grid xl:gap-6 grid-content xl:grid-cols-content">
           <div className="xl:relative top-0 max-w-min">
@@ -53,6 +49,9 @@ const Content: React.FC<PageProps<PageQueryResult>> = ({
             </aside>
           </div>
           <article className="py-6 grid-area-article">
+            <h1 className="text-4xl font-bold my-10">
+              {content.frontmatter.title}
+            </h1>
             <div dangerouslySetInnerHTML={{ __html: content.html }} />
           </article>
         </div>

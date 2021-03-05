@@ -2,7 +2,12 @@ import { GatsbyConfig } from 'gatsby'
 
 const gatsbyConfig: GatsbyConfig = {
   siteMetadata: {
-    title: 'Snowpack——更快的前端构建工具',
+    title: 'Snowpack 简体中文',
+    description: 'Snowpack——更快的前端构建工具',
+    author: {
+      name: '千魂剑',
+      github: 'https://github.com/qhj',
+    },
   },
   plugins: [
     {

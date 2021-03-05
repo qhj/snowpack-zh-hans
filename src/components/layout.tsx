@@ -3,11 +3,10 @@
 import { ReactElement, useState, useRef, useEffect } from 'react'
 import { Helmet } from 'react-helmet'
 
+import SEO from './seo'
 import Banner from './banner'
 import NavBar from './navBar'
 import Menu from '../components/menu'
-
-import favicon from '../images/favicon.svg'
 
 // interface QueryResult {
 //   site: {
@@ -40,16 +39,25 @@ import favicon from '../images/favicon.svg'
 // }
 
 interface Slot {
-  title?: ReactElement
   heroOrCover?: ReactElement
   main: ReactElement
+}
+
+interface LayoutProps {
+  description?: string
+  title: string
 }
 
 export interface DisplayMenu {
   (): void
 }
 
-const Layout: React.FC<Slot> = ({ title, heroOrCover, main }: Slot) => {
+const Layout: React.FC<Slot & LayoutProps> = ({
+  title,
+  description,
+  heroOrCover,
+  main,
+}: Slot & LayoutProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const displayMenu: DisplayMenu = () => setIsOpen(!isOpen)
   const [stuck, setStuck] = useState(true)
@@ -84,8 +92,8 @@ const Layout: React.FC<Slot> = ({ title, heroOrCover, main }: Slot) => {
 
   return (
     <>
+      <SEO title={title} description={description} />
       <Helmet>
-        <link rel="icon" href={favicon} />
         <body className={isOpen ? 'overflow-hidden' : 'overflow-visible'} />
         {/* https://stackoverflow.com/a/46405558 */}
       </Helmet>
@@ -106,18 +114,7 @@ const Layout: React.FC<Slot> = ({ title, heroOrCover, main }: Slot) => {
         >
           <Menu />
         </aside>
-        <div>
-          {title}
-          {main}
-          {/* <div className="xl:grid xl:gap-6 grid-content xl:grid-cols-content">
-            <div className="xl:relative top-0 max-w-min">
-              <aside className="sticky top-14 w-80 xl:pt-20 xl:pb-6 grid-area-toc">
-                {tableOfContents}
-              </aside>
-            </div>
-            <article className="py-6 grid-area-article">{content}</article>
-          </div> */}
-        </div>
+        <div>{main}</div>
       </section>
     </>
   )
