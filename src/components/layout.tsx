@@ -36,9 +36,13 @@ const Layout: React.FC<Slot & LayoutProps> = ({
   })
   // https://github.com/gatsbyjs/gatsby/issues/5835#issuecomment-396146389
   useEffect(() => {
+    let mounted = true
     const observer = new IntersectionObserver(
       () => {
-        setStuck(!stuck)
+        if (mounted) {
+          // https://www.debuggr.io/react-update-unmounted-component/
+          setStuck(!stuck)
+        }
       },
       {
         rootMargin: '-1px 0px 0px 0px',
@@ -49,9 +53,7 @@ const Layout: React.FC<Slot & LayoutProps> = ({
     if (sticky.current) {
       observer.observe(sticky.current)
     }
-    return () => {
-      observer.unobserve(sticky.current)
-    }
+    return () => (mounted = false)
     // https://medium.com/@She_Daddy/using-the-intersection-observer-api-dbe13144b5da
   }, [])
 
