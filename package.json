@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "yarn develop",
-    "prebuild": "yarn build:config",
+    "prebuild": "yarn build:config && yarn build:config",
     "build": "gatsby build",
     "postbuild": "yarn clean",
     "build:config": "tsc",
