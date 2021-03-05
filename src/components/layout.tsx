@@ -7,6 +7,7 @@ import SEO from './seo'
 import Banner from './banner'
 import NavBar from './navBar'
 import Menu from '../components/menu'
+import { useMedia } from 'react-media'
 
 // interface QueryResult {
 //   site: {
@@ -62,8 +63,10 @@ const Layout: React.FC<Slot & LayoutProps> = ({
   const displayMenu: DisplayMenu = () => setIsOpen(!isOpen)
   const [stuck, setStuck] = useState(true)
   const sticky = useRef<HTMLElement>(null)
-  const mediaMatch = window.matchMedia('(min-width: 768px)')
-  const [matches, setMatches] = useState(mediaMatch.matches)
+  const isMediumScreen = useMedia({
+    query: '(min-width: 768px)',
+  })
+  // https://github.com/gatsbyjs/gatsby/issues/5835#issuecomment-396146389
   useEffect(() => {
     const observer = new IntersectionObserver(
       () => {
@@ -83,12 +86,6 @@ const Layout: React.FC<Slot & LayoutProps> = ({
     }
     // https://medium.com/@She_Daddy/using-the-intersection-observer-api-dbe13144b5da
   }, [])
-  useEffect(() => {
-    const handler = e => setMatches(e.matches)
-    mediaMatch.addEventListener('change', handler)
-    return () => mediaMatch.removeEventListener('change', handler)
-    // https://medium.com/@ttennant/react-inline-styles-and-media-queries-using-a-custom-react-hook-e76fa9ec89f6
-  })
 
   return (
     <>
@@ -106,7 +103,7 @@ const Layout: React.FC<Slot & LayoutProps> = ({
             isOpen ? 'block' : 'hidden'
           }`}
           style={{
-            top: !matches
+            top: !isMediumScreen
               ? sticky.current?.getBoundingClientRect().bottom
               : '3.5rem',
             // https://stackoverflow.com/a/11396681
