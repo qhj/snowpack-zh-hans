@@ -40,6 +40,7 @@ const gatsbyConfig: GatsbyConfig = {
               icon: '#',
               isIconAfterHeader: true,
               className: 'text-nav italic opacity-0 group-hover:opacity-100',
+              maintainCase: true,
             },
           },
           {

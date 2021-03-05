@@ -8,11 +8,6 @@ interface Heading {
 }
 
 interface PageQueryResult {
-  site: {
-    siteMetadata: {
-      title: string
-    }
-  }
   markdownRemark: {
     headings: Heading[]
     html: string
@@ -26,7 +21,6 @@ const Content: React.FC<PageProps<PageQueryResult>> = ({
   data,
 }: PageProps<PageQueryResult>) => {
   const content = data.markdownRemark
-  const siteTitle = data.site.siteMetadata.title
   return (
     <Layout
       title={content.frontmatter.title}
@@ -64,11 +58,6 @@ export default Content
 
 export const pageQuery = graphql`
   query($slug: String!) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       headings {
         depth
