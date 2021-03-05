@@ -7,6 +7,8 @@ import Banner from './banner'
 import NavBar from './navBar'
 import Menu from '../components/menu'
 
+import favicon from '../images/favicon.svg'
+
 // interface QueryResult {
 //   site: {
 //     siteMetadata: {
@@ -88,6 +90,7 @@ const Layout: React.FC<Slot> = ({
   return (
     <>
       <Helmet>
+        <link rel="icon" href={favicon} />
         <body className={isOpen ? 'overflow-hidden' : 'overflow-visible'} />
         {/* https://stackoverflow.com/a/46405558 */}
       </Helmet>
