@@ -1,5 +1,3 @@
-// import { useStaticQuery, Link, graphql, PageProps } from 'gatsby'
-
 import { ReactElement, useState, useRef, useEffect } from 'react'
 import { Helmet } from 'react-helmet'
 
@@ -8,36 +6,6 @@ import Banner from './banner'
 import NavBar from './navBar'
 import Menu from '../components/menu'
 import { useMedia } from 'react-media'
-
-// interface QueryResult {
-//   site: {
-//     siteMetadata: {
-//       title: string
-//     }
-//   }
-// }
-
-// const Layout: React.FC<PageProps> = ({ children }: PageProps) => {
-//   const data = useStaticQuery<QueryResult>(
-//     graphql`
-//       query {
-//         site {
-//           siteMetadata {
-//             title
-//           }
-//         }
-//       }
-//     `
-//   )
-//   return (
-//     <div>
-//       <Link to={'/'}>
-//         <h3>{data.site.siteMetadata.title}</h3>
-//       </Link>
-//       {children}
-//     </div>
-//   )
-// }
 
 interface Slot {
   heroOrCover?: ReactElement

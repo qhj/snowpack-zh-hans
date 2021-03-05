@@ -19,34 +19,34 @@ const Menu: React.FC<{ className?: string }> = ({
   return (
     <nav className={className}>
       <ol className="leading-7">
-        {lists.map(element => {
-          if (!element.links) {
+        {lists.map(list => {
+          if (!list.links) {
             return (
-              <li className="mt-6 first:mt-0" key={element.url}>
+              <li className="mt-6 first:mt-0" key={list.url}>
                 <Link
                   className="hover:underline text-xl font-semibold text-gray-400 md:text-black"
-                  to={element.url}
+                  to={list.url}
                 >
-                  {element.header}
+                  {list.header}
                 </Link>
               </li>
             )
           } else {
-            const subLists = element.links
+            const subLists = list.links
             return (
-              <li className="mt-6 first:mt-0" key={element.url}>
+              <li className="mt-6 first:mt-0" key={list.url}>
                 <span className="text-xl font-semibold text-gray-400 md:text-black">
-                  {element.header}
+                  {list.header}
                 </span>
                 <ol>
-                  {subLists.map(element => {
+                  {subLists.map(subList => {
                     return (
-                      <li key={element.url}>
+                      <li key={subList.url}>
                         <Link
                           className="hover:underline text-white md:text-gray-500"
-                          to={element.url}
+                          to={list.url + subList.url}
                         >
-                          {element.title}
+                          {subList.title}
                         </Link>
                       </li>
                     )

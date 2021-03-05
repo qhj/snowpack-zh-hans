@@ -56,23 +56,6 @@ const Content: React.FC<PageProps<PageQueryResult>> = ({
           </article>
         </div>
       }
-      // content={<div dangerouslySetInnerHTML={{ __html: content.html }} />}
-      // tableOfContents={
-      //   <>
-      //     <h4 className="font-bold text-lg">目录</h4>
-      //     <ol id="toc">
-      //       {content.headings.map(heading => {
-      //         return (
-      //           <li key={heading.value}>
-      //             <a className="text-gray-500" href={`#${heading.value}`}>
-      //               {heading.value}
-      //             </a>
-      //           </li>
-      //         )
-      //       })}
-      //     </ol>
-      //   </>
-      // }
     ></Layout>
   )
 }
