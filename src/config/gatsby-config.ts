@@ -44,11 +44,15 @@ const gatsbyConfig: GatsbyConfig = {
             },
           },
           {
+            resolve: 'gatsby-remark-images',
+          },
+          {
             resolve: 'gatsby-remark-translation',
           },
         ],
       },
     },
+    'gatsby-plugin-sharp',
     'gatsby-plugin-postcss',
     'gatsby-plugin-react-helmet',
   ],
