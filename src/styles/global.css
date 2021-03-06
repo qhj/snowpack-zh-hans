@@ -27,3 +27,31 @@
     grid-area: toc;
   }
 }
+
+article h2 {
+  @apply text-3xl font-bold mt-8 mb-5 group
+}
+
+article h3 {
+  @apply text-2xl font-bold mt-8 mb-5 group
+}
+
+article h4 {
+  @apply text-xl font-bold mb-2 group
+}
+
+article p {
+  @apply my-3 leading-6
+}
+
+article ul {
+  @apply list-disc pl-8
+}
+
+article ol {
+  @apply list-decimal pl-8
+}
+
+ol#toc {
+  @apply list-none p-0
+}

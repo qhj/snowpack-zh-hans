@@ -22,19 +22,6 @@ const gatsbyConfig: GatsbyConfig = {
       options: {
         plugins: [
           {
-            resolve: 'gatsby-remark-classes',
-            options: {
-              classMap: {
-                'heading[depth=2]': 'text-3xl font-bold mt-8 mb-5 group',
-                'heading[depth=3]': 'text-2xl font-bold mt-8 mb-5 group',
-                'heading[depth=4]': 'text-xl font-bold mb-2 group',
-                paragraph: 'my-3 leading-6',
-                'list[ordered=false]': 'list-disc pl-8',
-                'list[ordered=true]': 'list-decimal pl-8',
-              },
-            },
-          },
-          {
             resolve: 'gatsby-remark-autolink-headers',
             options: {
               icon: '#',
