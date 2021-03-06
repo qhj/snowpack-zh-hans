@@ -19,7 +19,7 @@ description: Snowpack Build 使用（或不使用）打包器创建一个生产�
 
 By default, `snowpack build` will build your site using the same unbundled approach as the `dev` command. This is fine for most projects, but you also may still want to bundle for production. Legacy browser support, code minification, code-splitting, tree-shaking, dead code elimination, and other performance optimizations can all be handled in Snowpack via bundling.
 
-`snowpack build` 默认会使用与 `dev` 命令相同的非打包方式来构建你的网站。这对大多数项目来说已经可以了，但你也可能仍想打包你的应用。旧浏览器支持、代码压缩、代码分割、删除未引用代码（tree-shaking）、死代码消除以及其它性能优化都可以在 Snowpack 中通过打包来处理。
+`snowpack build` 默认会使用与 `dev` 命令相同的非打包方式来构建你的网站。这对大多数项目来说已经可以了，但你也可能仍想打包你的应用。传统浏览器支持、代码压缩、代码分离、删除未引用代码（tree-shaking）、死代码消除以及其它性能优化都可以在 Snowpack 中通过打包来处理。
 
 Bundlers normally require dozens or even hundreds of lines of configuration, but with Snowpack it's just a one-line plugin with no config required. This is possible because Snowpack builds your application _before_ sending it to the bundler, so the bundler never sees your custom source code (JSX, TS, Svelte, Vue, etc.) and instead needs to worry only about building common HTML, CSS, and JS.
 
