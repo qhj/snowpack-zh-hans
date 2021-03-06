@@ -30,12 +30,9 @@ const gatsbyConfig: GatsbyConfig = {
               maintainCase: true,
             },
           },
-          {
-            resolve: 'gatsby-remark-images',
-          },
-          {
-            resolve: 'gatsby-remark-translation',
-          },
+          'gatsby-remark-images',
+          'gatsby-remark-prismjs',
+          'gatsby-remark-translation',
         ],
       },
     },

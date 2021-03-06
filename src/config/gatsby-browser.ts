@@ -2,6 +2,8 @@ import { GatsbyBrowser } from 'gatsby'
 
 import './src/styles/global.css'
 
+import 'prismjs/themes/prism-okaidia.css'
+
 // https://css-tricks.com/sticky-table-of-contents-with-scrolling-active-states/
 export const onInitialClientRender: GatsbyBrowser['onInitialClientRender'] = () => {
   const observer = new IntersectionObserver(
