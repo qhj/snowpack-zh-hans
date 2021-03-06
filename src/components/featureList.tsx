@@ -85,7 +85,7 @@ const feature: Array<Feature> = [
     description: (
       <>
         Snowpack 决不会重复两次生成同一个文件。由浏览器的 JavaScript
-        原生模块系统（ESM）强力驱动
+        原生模块系统（ESM）强力驱动。
       </>
     ),
   },
@@ -97,7 +97,7 @@ const feature: Array<Feature> = [
         <Link className="text-blue-600" to="/concepts/hot-module-replacement">
           HMR 和快速刷新
         </Link>
-        可以立即在浏览器中看到对 React、 Preact 和 Svelte 的修改
+        可以立即在浏览器中看到对 React、 Preact 和 Svelte 的修改。
       </>
     ),
   },
@@ -105,7 +105,7 @@ const feature: Array<Feature> = [
     header: '开箱即用的支持',
     description: (
       <>
-        享受 Snowpack 对 JSX，Typescript，React，Preact，CSS Modules&nbsp;
+        享受 Snowpack 对 JSX、Typescript、React、Preact、CSS Modules&nbsp;
         <Link className="text-blue-600" to="/reference/supported-files">
           等等
         </Link>
@@ -115,7 +115,7 @@ const feature: Array<Feature> = [
   },
   {
     header: '优化',
-    description: <>通过内置的优化工具和支持你所喜欢打包器的插件来进行构建</>,
+    description: <>通过内置的优化工具和支持你所喜欢打包器的插件来进行构建。</>,
   },
   {
     header: '插件？插件！',
