@@ -12,7 +12,6 @@ export const onInitialClientRender: GatsbyBrowser['onInitialClientRender'] = () 
           document
             .querySelectorAll(`ol#toc > li > a[href="#${id}"]`)
             .forEach(element => {
-              element.classList.remove('text-gray-500')
               element.classList.add('xl:text-blue-500', 'xl:underline')
             })
         } else {
@@ -20,7 +19,6 @@ export const onInitialClientRender: GatsbyBrowser['onInitialClientRender'] = () 
             .querySelectorAll(`ol#toc > li > a[href="#${id}"]`)
             .forEach(element => {
               element.classList.remove('xl:text-blue-500', 'xl:underline')
-              element.classList.add('text-gray-500')
             })
         }
       })
