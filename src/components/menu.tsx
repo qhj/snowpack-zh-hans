@@ -88,7 +88,7 @@ const lists: Array<Section> = [
   },
   {
     header: '入门',
-    url: 'tutorials',
+    url: '/tutorials',
     links: [
       {
         url: '/quick-start',
