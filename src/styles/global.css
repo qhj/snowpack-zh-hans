@@ -55,3 +55,14 @@ article ol {
 ol#toc {
   @apply list-none p-0
 }
+
+article a {
+  @apply text-blue-500
+}
+
+article blockquote {
+  @apply m-0 py-4 px-8 text-lg rounded-lg shadow;
+	color: #2e5e82;
+	border-left: none;
+	background: linear-gradient(-30deg,#c9efd8,#f9ddff);
+}

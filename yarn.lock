@@ -6561,9 +6561,9 @@ gatsby-remark-prismjs@^4.0.0:
     unist-util-visit "^1.4.1"
 
 gatsby-remark-translation@^1.0.2:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-translation/-/gatsby-remark-translation-1.0.6.tgz#2c6ee33eeff58489f70258c22a9955ff9749334c"
-  integrity sha512-vavZLzlbivkVH2FmaBK2Goh6ffM9/lxtVr9eZ1oDi9C9jIn+paeYxyj84wA6IZLBy+QO3JjBYFc8QYYKZUgiSg==
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-translation/-/gatsby-remark-translation-1.0.7.tgz#53c48b6cd9333d48f07d82896b2d110e86020029"
+  integrity sha512-nbn0hrgywZOOHDsRRnwXusEdug9emvLrErPuljcz0KxuprjIcRQ3/kiifdNXnLttYWw8tJiLlQY9yDsJW6ZyLA==
   dependencies:
     mdast-util-to-string "^2.0.0"
     remark-grid-tables "^2.1.1"
