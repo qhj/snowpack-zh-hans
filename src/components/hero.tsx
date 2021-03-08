@@ -34,9 +34,9 @@ const Hero: React.FC = () => {
           >
             开 始
           </Link>
-          <div className="m-2"></div>
+          <div className="hidden md:block m-2"></div>
           <button
-            className="group w-72 font-mono border rounded-md px-4 py-3 shadow-sm border-gray-400 hover:border-blue-500 hover:shadow-md focus:outline-none bg-white"
+            className="hidden md:block group w-72 font-mono border rounded-md px-4 py-3 shadow-sm border-gray-400 hover:border-blue-500 hover:shadow-md focus:outline-none bg-white"
             onClick={copyToClipboard}
             onMouseLeave={restoreText}
           >
