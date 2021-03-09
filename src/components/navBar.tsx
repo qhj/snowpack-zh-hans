@@ -1,5 +1,5 @@
 import { forwardRef } from 'react'
-import { Link } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
 
 import { DisplayMenu } from './layout'
 
@@ -9,6 +9,13 @@ interface NavBarProps {
 
 const NavigationBar = forwardRef<HTMLElement, NavBarProps>(
   ({ displayMenu }: NavBarProps, ref) => {
+    const data = useStaticQuery(graphql`
+      query {
+        snowpack {
+          version
+        }
+      }
+    `)
     return (
       <nav
         id="nav"
@@ -52,10 +59,10 @@ const NavigationBar = forwardRef<HTMLElement, NavBarProps>(
           rel="noreferrer"
         >
           <span className="md:pr-4 md:border-r md:border-gray-500 text-gray-300 hover:text-white">
-            v3.0.13
+            {data.snowpack.version}
           </span>
         </a>
-        {data.map(element => {
+        {list.map(element => {
           const SVG = element.svg
           return (
             <a
@@ -85,7 +92,7 @@ interface Item {
   svg: React.FC<Props>
 }
 
-const data: Array<Item> = [
+const list: Array<Item> = [
   {
     url: 'https://github.com/snowpackjs/snowpack',
     svg: ({ className }: Props) => (

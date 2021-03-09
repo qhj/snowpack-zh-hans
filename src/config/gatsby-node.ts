@@ -1,6 +1,7 @@
 import * as path from 'path'
-import { GatsbyNode } from 'gatsby'
+import { GatsbyNode, SourceNodesArgs, NodeInput } from 'gatsby'
 import { createFilePath } from 'gatsby-source-filesystem'
+import fetch from 'node-fetch'
 
 interface Edge {
   node: {
@@ -75,4 +76,33 @@ export const onCreateBabelConfig: GatsbyNode['onCreateBabelConfig'] = ({
       runtime: 'automatic',
     },
   })
+}
+
+export const sourceNodes = async (args: SourceNodesArgs) => {
+  const {
+    actions: { createNode },
+    createContentDigest,
+  } = args
+  const starCountResult = await fetch(
+    'https://api.github.com/repos/snowpackjs/snowpack'
+  )
+  const versionResult = await fetch(
+    'https://raw.githubusercontent.com/snowpackjs/snowpack/main/snowpack/package.json'
+  )
+  const versionData = await versionResult.json()
+  const stargazersCountData = await starCountResult.json()
+  const data = {
+    version: versionData.version,
+    stargazersCount: stargazersCountData.stargazers_count,
+  }
+  const nodeMeta: NodeInput = {
+    id: 'snowpack',
+    parent: null,
+    children: [],
+    internal: {
+      type: 'snowpack',
+      contentDigest: createContentDigest(data),
+    },
+  }
+  createNode(Object.assign({}, nodeMeta, data))
 }

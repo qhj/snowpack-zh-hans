@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
 
 const Hero: React.FC = () => {
   const originalText = 'npm install snowpack'
@@ -18,6 +18,13 @@ const Hero: React.FC = () => {
     setText(originalText)
     isCopied && setIsCopied(false)
   }
+  const data = useStaticQuery(graphql`
+    query {
+      snowpack {
+        stargazersCount
+      }
+    }
+  `)
   return (
     <div className="flex items-center justify-center h-screen/2 min-h-80 max-h-120 bg-hero bg-indigo-100 bg-no-repeat bg-hero-position bg-50%">
       <div className="md:w-160 mx-auto py-8">
@@ -71,7 +78,7 @@ const Hero: React.FC = () => {
               className="inline-block px-3 py-1 border rounded-r-sm border-gray-400 hover:text-blue-500 hover:bg-gray-200"
               href="https://github.com/snowpackjs/snowpack/stargazers"
             >
-              17,385
+              {data.snowpack.stargazersCount}
             </a>
           </div>
         </div>
