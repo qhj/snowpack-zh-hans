@@ -67,7 +67,7 @@ const Layout: React.FC<Slot & LayoutProps> = ({
       <Banner />
       <NavBar displayMenu={displayMenu} ref={sticky} />
       {heroOrCover}
-      <section className="grid mt-6 mx-auto gap-6 grid-main md:grid-cols-main grid-cols-main-auto max-w-main px-6">
+      <section className="grid mt-6 mx-auto md:gap-6 grid-main md:grid-cols-main grid-cols-main-auto max-w-main px-6">
         <aside
           className={`md:sticky grid-area-menu p-6 pb-4 overflow-y-auto w-full md:block md:w-64 md:max-h-menu bg-nav z-40 box-border md:bg-white fixed inset-x-0 bottom-0 ${
             isOpen ? 'block' : 'hidden'
