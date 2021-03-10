@@ -81,7 +81,7 @@ const Layout: React.FC<Slot & LayoutProps> = ({
         >
           <Menu />
         </aside>
-        <div>{main}</div>
+        {main}
       </section>
     </>
   )

@@ -53,9 +53,9 @@ const Content: React.FC<PageProps<PageQueryResult>> = ({
     <Layout
       title={content.frontmatter.title}
       main={
-        <div className="xl:grid xl:gap-6 grid-content xl:grid-cols-content">
+        <div className="grid xl:gap-6 grid-content xl:grid-cols-content">
           <TOC className="hidden xl:block" headings={content.headings} />
-          <article className="py-6 grid-area-article">
+          <article className="py-6 grid-area-article min-w-0">
             <h1 className="text-4xl font-bold my-10">
               {content.frontmatter.title}
             </h1>
